@@ -33,8 +33,6 @@ const SingUpPage = () => {
     }, [user])
     const handleSignUpRequest = () => {
         if (!user.firstName || !user.email) return alert("Required field are missing");
-        if(!isValidEmail(user.email) || !isValidPassword(user.password)) 
-            return alert("Please enter valid information.");
         navigate('/user', {
             state: { name: user.firstName, email: user.email }
         });
